@@ -1,0 +1,52 @@
+Variation 1: 3D Scatter Plot
+
+import matplotlib.pyplot as plt
+import numpy as np
+# Create random data
+np.random.seed(42)
+n_points = 100
+x = np.random.rand(n_points)
+y = np.random.rand(n_points)
+z = np.random.rand(n_points)
+# Create 3D scatter plot
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+ax.scatter(x, y, z, c='blue', marker='o')
+# Add labels and title
+ax.set_xlabel('X Axis')
+ax.set_ylabel('Y Axis')
+ax.set_zlabel('Z Axis')
+ax.set_title('3D Scatter Plot')
+# Show the plot
+plt.show()
+
+
+Variation 2: 3D Line Plot
+import matplotlib.pyplot as plt
+import numpy as np
+# Create random data
+theta 
+= np.linspace(0, 2
+*np.pi, 100)
+z 
+= np.linspace(0, 1, 100)
+# Create 3D line plot
+fig 
+= plt.figure()
+ax 
+= fig.add_subplot(111, projection
+='3d')
+ax.plot(z 
+* np.cos(theta), z 
+* np.sin(theta),
+ z,
+ label
+='3D Spiral Curve')
+# Add labels and title
+ax.set_xlabel('X Axis')
+ax.set_ylabel('Y Axis')
+ax.set_zlabel('Z Axis')
+ax.set_title('3D Line Plot')
+# Show the plot
+plt.legend()
+plt.show()
