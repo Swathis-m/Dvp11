@@ -1,0 +1,11 @@
+# Simple Pie Chart
+import matplotlib.pyplot as plt
+# Example data
+categories = ['Category A', 'Category B', 'Category C']
+values = [30, 40, 30]
+# Create a simple pie chart
+plt.pie(values, labels=categories, autopct='%1.1f%%', startangle=90)
+# Add a title
+plt.title('Simple Pie Chart')
+# Show the pie chart
+plt.show()
