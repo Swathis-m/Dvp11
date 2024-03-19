@@ -1,0 +1,42 @@
+from bokeh.plotting import figure, show
+from bokeh.models import Label, Legend
+from bokeh.io import output_file
+# Create a figure
+p = figure(title="Bokeh Line Graph with Annotations and Legends", 
+ x_axis_label="X-axis",
+ y_axis_label="Y-axis")
+# Generate some sample data
+x_values = [1, 2, 3, 4, 5]
+y1_values = [5, 3, 4, 2, 6]
+y2_values = [1, 2, 0, 3, 4]
+# Plot lines on the figure
+line1 = p.line(x_values,
+ y1_values, 
+ line_width=2,
+ legend_label="Line 1",
+ line_color="blue")
+line2 = p.line(x_values,
+ y2_values,
+ line_width=2,
+ legend_label="Line 2",
+ line_color="green")
+# Add annotations to the graph
+annotation1 = Label(x=3, y=4, 
+ text="Annotation 1",
+ text_font_size="10pt",
+ text_color="black")
+annotation2 = Label(x=2, y=2,
+ text="Annotation 2",
+ text_font_size="10pt",
+ text_color="black")
+p.add_layout(annotation1)
+p.add_layout(annotation2)
+# Add legends to the graph
+legend = Legend(items=[("Line 1", [line1]),
+ ("Line 2", [line2])],
+ location="top_left")
+p.add_layout(legend)
+# Save the output to an HTML file
+output_file("bokeh_line_graph.html")
+# Show the plot
+show(p)
