@@ -1,0 +1,12 @@
+import plotly.express as px
+# Create a sample dataframe with location data
+data = {'City': ['New York', 'Los Angeles', 'Chicago', 'Houston',
+ 'Phoenix'],
+ 'Lat': [40.7128, 34.0522, 41.8781, 29.7604, 33.4484],
+ 'Lon': [-74.0060, -118.2437, -87.6298, -95.3698, -112.0740]}
+df = pd.DataFrame(data)
+# Create a map plot
+fig = px.scatter_geo(df, lat='Lat', lon='Lon', text='City',
+ title='Map Plot using Plotly',
+ projection='natural earth')
+fig.show()
