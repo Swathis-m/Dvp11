@@ -1,0 +1,29 @@
+import matplotlib.pyplot as plt
+import numpy as np
+# Generate sample data
+x = np.linspace(0, 10, 100)
+y = 2 * x + 3
+# Create a more aesthetic line plot
+plt.plot(x, y, label='y = 2x + 3', 
+ color='#1f77b4', linestyle='-',
+ linewidth=2, marker='o', 
+ markersize=8, markerfacecolor='red', 
+ markeredgecolor='black', alpha=0.8)
+# Adding labels and title with custom font settings
+plt.xlabel('X-axis', fontsize=12,
+ fontweight='bold', color='#333333')
+plt.ylabel('Y-axis', fontsize=12,
+ fontweight='bold', color='#333333')
+plt.title('Aesthetic Line Plot', fontsize=16,
+ fontweight='bold', color='#333333')
+# Adjusting grid style
+plt.grid(True, linestyle='--', alpha=0.5)
+# Adding legend with custom settings
+plt.legend(loc='upper left', fontsize=10, fancybox=True, framealpha=0.8, edgec
+olor='black')
+# Customizing tick parameters
+plt.tick_params(axis='both', labelsize=10, color='#333333')
+# Adding a background color to the plot
+plt.gca().set_facecolor('#f0f0f0')
+# Show the plot
+plt.show()
