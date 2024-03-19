@@ -1,0 +1,37 @@
+def get_cosine(vec1, vec2):
+ # Find the common words (intersection) between the two vectors
+ intersection = set(vec1.keys()) & set(vec2.keys())
+ 
+ # Calculate the numerator (dot product) of the vectors
+ numerator = sum([vec1[x] * vec2[x] for x in intersection])
+ # Calculate the denominator (magnitude) of each vector
+ sum1 = sum([vec1[x] ** 2 for x in list(vec1.keys())])
+ sum2 = sum([vec2[x] ** 2 for x in list(vec2.keys())])
+ 
+ # Calculate the square root of the product of the magnitudes
+ denominator = math.sqrt(sum1) * math.sqrt(sum2)
+ # Check if the denominator is zero to avoid division by zero
+ if not denominator:
+ return 0.0
+ else:
+ # Calculate and return the cosine similarity
+ return float(numerator) / denominator
+def text_to_vector(text):
+ # Find all words in the text using the defined regular expression
+ words = WORD.findall(text)
+ 
+ # Use Counter to count the frequency of each word in the list
+ return Counter(words)
+s1 = "This is a foo bar sentence."
+s2 = "This sentence is similar to a foo bar sentence."
+# Convert the text strings into vectors
+vector1 = text_to_vector(s1)
+vector2 = text_to_vector(s2)
+# Calculate the cosine similarity between the two vectors
+cosine = get_cosine(vector1, vector2)
+# Print the result
+print(f"The cosine similarity between '{s1}' and '{s2}' is {cosine:.2f}.")
+
+Output:
+The cosine similarity between 'This is a foo bar sentence.' and 'This sentence is s
+imilar to a foo bar sentence.' is 0.86.

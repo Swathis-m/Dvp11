@@ -1,0 +1,29 @@
+def binary_to_decimal(binary_str):
+ try:
+ decimal_value = int(binary_str, 2)
+ return decimal_value
+ except ValueError:
+ return "Invalid binary input."
+# Function to convert octal to hexadecimal
+def octal_to_hexadecimal(octal_str):
+ try:
+ decimal_value = int(octal_str, 8)
+ hexadecimal_value = hex(decimal_value)
+ return hexadecimal_value
+ except ValueError:
+ return "Invalid octal input."
+# Input: Accept user input for binary and octal numbers
+binary_input = input("Enter a binary number: ")
+octal_input = input("Enter an octal number: ")
+# Convert binary to decimal
+decimal_result = binary_to_decimal(binary_input)
+print(f"Decimal value of {binary_input} is: {decimal_result}")
+# Convert octal to hexadecimal
+hexadecimal_result = octal_to_hexadecimal(octal_input)
+print(f"Hexadecimal value of {octal_input} is: {hexadecimal_result}")
+
+Output:
+Enter a binary number: 0101
+Enter an octal number: 567
+Decimal value of 0101 is: 5
+Hexadecimal value of 567 is: 0x177

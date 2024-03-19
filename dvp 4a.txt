@@ -1,0 +1,27 @@
+Simple bar plot: 
+import matplotlib.pyplot as plt
+data = [2, 5, 8, 12, 7]
+categories = ['A', 'B', 'C', 'D', 'E']
+plt.bar(categories, data)
+plt.xlabel('Categories')
+plt.ylabel('Values')
+plt.title('Simple Bar Plot')
+plt.show()
+
+Group bar plot:
+import matplotlib.pyplot as plt
+import numpy as np
+data1 = [2, 5, 8, 12, 7]
+data2 = [3, 6, 9, 11, 8]
+categories = ['A', 'B', 'C', 'D', 'E']
+width = 0.35
+fig, ax = plt.subplots()
+bar1 = ax.bar(np.arange(len(categories)), data1, width, label='Group 1')
+bar2 = ax.bar(np.arange(len(categories)) + width, data2, width, label='Group 2')
+ax.set_xticks(np.arange(len(categories)) + width / 2)
+ax.set_xticklabels(categories)
+ax.legend()
+plt.xlabel('Categories')
+plt.ylabel('Values')
+plt.title('Grouped Bar Plot')
+plt.show()

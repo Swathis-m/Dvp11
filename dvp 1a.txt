@@ -1,0 +1,22 @@
+def calculate_average(test_scores):
+ return sum(test_scores) / len(test_scores)
+# Input: Accept three test scores from the user
+test_scores = []
+for i in range(3):
+ score = float(input(f"Enter the score for Test {i + 1}: "))
+ test_scores.append(score)
+# Calculate the average of all three test scores
+average_all = calculate_average(test_scores)
+# Calculate the best of two test averages
+best_of_two = max(calculate_average(test_scores[:2]), 
+calculate_average(test_scores[1:]))
+# Output the results
+print(f"Average of all three tests: {average_all:.2f}")
+print(f"Best of two test averages: {best_of_two:.2f}")
+
+Output:
+Enter the score for Test 1: 45
+Enter the score for Test 2: 56
+Enter the score for Test 3: 78
+Average of all three tests: 59.67
+Best of two test averages: 67.00

@@ -1,0 +1,19 @@
+import numpy as np
+import matplotlib.pyplot as plt
+# Generate random temperature and humidity values with a positive 
+correlation
+np.random.seed(10) # Set seed for reproducibility
+temperatures = np.random.randint(15, 35, size=60)
+humidity = 40 + temperatures * 0.5 + np.random.randn(60) # Add some 
+noise
+plt.figure(figsize=(6, 6)) # Adjust figure size if needed
+# Scatter plot with blue circles
+plt.scatter(temperatures, humidity, c="blue", alpha=0.7)
+# Add labels and title
+plt.xlabel("Temperature (°C)")
+plt.ylabel("Humidity (%)")
+plt.title("Temperature vs. Humidity")
+# Show the plot
+plt.grid(True)
+plt.tight_layout()
+plt.show()
